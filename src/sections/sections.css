@@ -483,8 +483,15 @@
   display: block;
 }
 @media (max-width: 899px) {
+  /* The previous 4/3 box was much wider than the source photo (4/5
+     native), forcing a deep vertical crop that cut faces off at the
+     bottom. 5/6 keeps a near-1:1 crop (almost the full frame) while
+     staying a card, not a portrait slab. */
   .story__photo-wrap {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 5 / 6;
+  }
+  .story__photo-wrap img {
+    object-position: center 22%;
   }
 }
 

@@ -130,22 +130,31 @@
     min-height: 440px;
   }
 
+  /* Sized so word + margin always fits inside half the viewport (minus the
+     section gutter), instead of relying on .hero's overflow:hidden to mask
+     an oversized box — that clipping is unreliable for the WebGL canvas in
+     the cup on some mobile browsers. */
   .hero__word {
-    font-size: clamp(3.8rem, 22vw, 7rem);
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
   }
 
   .hero__word--left {
     right: 50%;
-    margin-right: clamp(3rem, 18vw, 5rem);
+    margin-right: clamp(1.4rem, 8vw, 2.2rem);
   }
 
   .hero__word--right {
     left: 50%;
-    margin-left: clamp(3rem, 18vw, 5rem);
+    margin-left: clamp(1.4rem, 8vw, 2.2rem);
   }
 
+  /* The cup (and the Spline canvas's baked-in "Built with Spline" badge
+     painted in its corner) must fit fully on-screen — width is capped to
+     the viewport instead of a fixed 520px, and the desktop's rightward
+     balancing offset is dropped so it stays truly centered. */
   .hero__cup {
-    width: 520px;
-    height: 520px;
+    width: min(58vw, 340px);
+    height: min(58vw, 340px);
+    transform: translate(-50%, -50%);
   }
 }
