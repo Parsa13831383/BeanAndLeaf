@@ -10,6 +10,7 @@ const Craft = lazy(() => import('./sections/Craft'));
 const Bar = lazy(() => import('./sections/Bar'));
 const Roasters = lazy(() => import('./sections/Roasters'));
 const Kitchen = lazy(() => import('./sections/Kitchen'));
+const PhotoBreak = lazy(() => import('./sections/PhotoBreak'));
 const Recognition = lazy(() => import('./sections/Recognition'));
 const Visit = lazy(() => import('./sections/Visit'));
 const Chapter = lazy(() => import('./sections/Chapter'));
@@ -30,6 +31,7 @@ export default function App() {
           <Bar />
           <Roasters />
           <Kitchen />
+          <PhotoBreak />
           <Recognition />
           <Visit />
           <Chapter />

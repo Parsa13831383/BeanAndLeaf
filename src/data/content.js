@@ -140,6 +140,13 @@ export const kitchen = {
   ],
 };
 
+/* --- A small pause (editorial interlude, between Kitchen and Recognition) */
+export const pause = {
+  eyebrow: 'A small ritual',
+  heading: 'Worth slowing\ndown for.',
+  body: 'A fresh bag from this month’s guest roaster, a seat that isn’t rushed, and a room that doesn’t mind if you stay a while.',
+};
+
 /* --- Recognition ----------------------------------------------------- */
 export const recognition = {
   eyebrow: 'Kindly said',

@@ -60,7 +60,9 @@
 html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+  /* Anchor scrolling is handled by Lenis (SmoothScroll); native smooth
+     scroll-behavior would fight its animation. Reduced-motion users skip
+     Lenis entirely and get this default (instant) scroll instead. */
 }
 body {
   font-family: var(--font-body);

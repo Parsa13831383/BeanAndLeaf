@@ -11,6 +11,15 @@ export default function Visit() {
   return (
     <section id="visit" className="section panel--warm">
       <div className="container">
+        <Reveal className="visit__photo-wrap" y={0}>
+          <img
+            src="/4.jpg"
+            alt="Bean & Leaf Coffee House — 76 Hertford Street, Coventry"
+            loading="lazy"
+            decoding="async"
+          />
+        </Reveal>
+
         <div className="visit__grid">
           <div>
             <SectionHead eyebrow={visit.eyebrow} heading={visit.heading} />

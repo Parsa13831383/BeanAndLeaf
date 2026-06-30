@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLenis } from 'lenis/react';
 import { nav } from '../data/content';
 import { Amp } from './Marks';
 import './Navbar.css';
@@ -7,6 +8,7 @@ import './Navbar.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const lenis = useLenis();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -15,13 +17,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll while the mobile menu is open.
+  // Lock body scroll while the mobile menu is open. Lenis drives scroll
+  // directly via window.scrollTo on every wheel/touch event, which can
+  // bleed through a CSS-only overflow lock — stop/start it in step.
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
+    if (open) lenis?.stop();
+    else lenis?.start();
     return () => {
       document.body.style.overflow = '';
+      lenis?.start();
     };
-  }, [open]);
+  }, [open, lenis]);
 
   return (
     <>
