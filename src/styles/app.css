@@ -1,0 +1,16 @@
+/* skip link — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--espresso);
+  color: var(--paper);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: top 0.3s var(--ease);
+}
+.skip-link:focus {
+  top: 1rem;
+}

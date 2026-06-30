@@ -1,0 +1,160 @@
+/* =========================================================================
+   Bean & Leaf — design tokens & global styles
+   -------------------------------------------------------------------------
+   Direction: Apple × Aesop × Blue Bottle × Linear.
+   White-led canvas, warm neutrals, espresso ink, and one signature accent —
+   a restrained botanical sage (the "Leaf"), so this never reads as a
+   generic all-brown coffee site.
+   ========================================================================= */
+
+:root {
+  /* --- Colour -------------------------------------------------------- */
+  --paper: #f8f8f6; /* warm white canvas (barely warm, not cream)      */
+  --paper-2: #f4f1ea; /* faint panel wash for alternating sections      */
+  --crema: #ede6da; /* soft warm fill                                   */
+  --latte: #bca992; /* warm neutral — hairlines, captions, muted text  */
+  --bark: #463224; /* secondary brown                                  */
+  --espresso: #2a211b; /* primary ink                                   */
+  --leaf: #5e6b52; /* SIGNATURE botanical sage — the "Leaf"            */
+  --leaf-deep: #46523c;
+
+  --ink-90: rgba(42, 33, 27, 0.9);
+  --ink-60: rgba(42, 33, 27, 0.6);
+  --ink-40: rgba(42, 33, 27, 0.4);
+  --hair: rgba(42, 33, 27, 0.12);
+  --hair-soft: rgba(42, 33, 27, 0.07);
+
+  /* --- Type ---------------------------------------------------------- */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* fluid type scale */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.86rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.25rem);
+  --step-3: clamp(2.2rem, 1.8rem + 2vw, 3.4rem);
+  --step-4: clamp(3rem, 2rem + 5vw, 5.5rem);
+  --step-hero: clamp(3rem, 1rem + 11vw, 9.5rem);
+
+  /* --- Space & rhythm ------------------------------------------------ */
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+  --section-y: clamp(5rem, 10vw, 11rem);
+  --maxw: 1320px;
+
+  /* --- Motion -------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1); /* gentle, no overshoot       */
+}
+
+/* --- Reset ----------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--espresso);
+  background: var(--paper);
+  overflow-x: hidden;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+::selection {
+  background: var(--leaf);
+  color: var(--paper);
+}
+
+/* --- Type primitives ------------------------------------------------- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-optical-sizing: auto;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--leaf-deep);
+}
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink-90);
+  font-weight: 300;
+}
+.muted {
+  color: var(--ink-60);
+}
+
+/* --- Layout helpers -------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section {
+  padding-block: var(--section-y);
+}
+.rule {
+  height: 1px;
+  background: var(--hair);
+  border: 0;
+}
+
+/* the recurring "&" mark used as a divider flourish */
+.amp {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--leaf);
+}
+
+/* --- Accessibility quality floor ------------------------------------ */
+:focus-visible {
+  outline: 2px solid var(--leaf);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
