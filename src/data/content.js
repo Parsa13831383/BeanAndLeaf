@@ -166,13 +166,50 @@ export const recognition = {
     { value: 'Gold Seal', label: 'Good Food Award 2025 / 26' },
     { value: 'Featured', label: 'European Coffee Trip guide' },
   ],
-  // Paraphrased sentiment representative of public reviews. Replace with
-  // attributed, permissioned quotes before launch. // CONFIRM
-  voices: [
-    { quote: 'A hidden gem with the best coffee in the city — and the cake to match.', source: 'Google review' },
-    { quote: 'In a world of chains, a real beacon for people who love proper coffee.', source: 'Google review' },
-    { quote: 'A little haven in the centre of town. We walk in just for the coffee.', source: 'Tripadvisor' },
-  ],
+  // Real, attributed Google reviews (first name + quote), supplied by the owner.
+  google: {
+    rating: 4.9,
+    count: '600+',
+    link: 'https://www.google.com/maps/place/Bean+%26+Leaf+Coffee+House/@52.4073652,-1.5103828,17z/data=!4m8!3m7!1s0x48774bbac335fec9:0x867334924328779!8m2!3d52.4073652!4d-1.5103828!9m1!1b1!16s%2Fg%2F11f3qwzw5l?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D',
+    reviews: [
+      {
+        name: 'David',
+        rating: 5,
+        quote:
+          'A genuinely remarkable little spot. They take their coffee exceptionally seriously and have a great atmosphere.',
+      },
+      {
+        name: 'Kim',
+        rating: 5,
+        quote: 'Speciality coffee in Coventry city centre. I’ve had lovely espresso and tasty natural process pour-overs already.',
+      },
+      {
+        name: 'Eden',
+        rating: 5,
+        quote: 'Best coffee selection in Coventry. If you know good coffee, this is the place to go.',
+      },
+      {
+        name: 'Ben',
+        rating: 5,
+        quote: 'The coffee is excellent and the rotating guest menu highlights interesting coffees from a range of roasters.',
+      },
+      {
+        name: 'Leo',
+        rating: 5,
+        quote: 'A little haven in the heart of Coventry. The coffee was excellent and the staff are genuinely friendly.',
+      },
+      {
+        name: 'Keith',
+        rating: 5,
+        quote: 'The coffee was delicious, a real step above any other cup I had in the city.',
+      },
+      {
+        name: 'Chloe',
+        rating: 5,
+        quote: 'Bean and Leaf is my number one stop for a coffee when I’m in town. Best coffee in Coventry.',
+      },
+    ],
+  },
 };
 
 /* --- Visit ----------------------------------------------------------- */
