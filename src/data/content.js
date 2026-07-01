@@ -153,12 +153,18 @@ export const kitchen = {
 
 /* --- Gallery: a rotating look at what's in the case today ------------ */
 export const gallery = [
-  { src: '/p1.jpg', alt: 'A slice of chocolate loaf cake with chocolate buttercream' },
-  { src: '/p2.jpg', alt: 'A jam-filled shortbread biscuit' },
-  { src: '/p3.jpg', alt: 'A frangipane bar, dusted with icing sugar' },
-  { src: '/p4.jpg', alt: 'A cinnamon roll, dusted with icing sugar' },
-  { src: '/p5.jpg', alt: 'A pistachio and cranberry blondie' },
-  { src: '/p6.jpg', alt: 'Two loaded chocolate chip cookies' },
+  { src: '/cakes/p1.jpg', alt: 'A slice of chocolate loaf cake with chocolate buttercream' },
+  { src: '/cakes/p2.jpg', alt: 'A jam-filled shortbread biscuit' },
+  { src: '/cakes/p3.jpg', alt: 'A frangipane bar, dusted with icing sugar' },
+  { src: '/cakes/p4.jpg', alt: 'A cinnamon roll, dusted with icing sugar' },
+  { src: '/cakes/p5.jpg', alt: 'A pistachio and cranberry blondie' },
+  { src: '/cakes/p6.jpg', alt: 'Two loaded chocolate chip cookies' },
+  { src: '/cakes/p7.jpg', alt: 'A slice of berry-glazed loaf cake, with a second slice alongside' },
+  { src: '/cakes/p8.jpg', alt: 'A stack of loaded chocolate chip cookies studded with colourful chocolate pieces' },
+  { src: '/cakes/p9.jpg', alt: 'Peanut butter sandwich cookies filled with cream' },
+  { src: '/cakes/p10.jpg', alt: 'Two oat and honey flapjack bars' },
+  { src: '/cakes/p11.jpg', alt: 'A blondie bar, dusted with icing sugar' },
+  { src: '/cakes/p12.jpg', alt: 'Three frosted cupcakes topped with edible flowers' },
 ];
 
 /* --- A small pause (editorial interlude, between Kitchen and Recognition) */
