@@ -1,4 +1,4 @@
-import { Component, Suspense, lazy, useState } from 'react';
+import { Component, Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { SPLINE_SCENE_URL } from '../data/config';
 import './CupStage.css';
@@ -32,13 +32,37 @@ class CupErrorBoundary extends Component {
  *
  * Dispatches a `cup:ready` window event once Spline reports it's actually
  * loaded, which is what tells the Preloader it's safe to reveal the page.
+ *
+ * The scene is a continuously-rendering WebGL canvas (physics + gaussian
+ * splatting) — real cost that competes with Lenis's rAF-driven smooth
+ * scroll even when the cup has long scrolled out of view. An
+ * IntersectionObserver calls the runtime's own stop()/play() so it only
+ * renders while actually on screen.
  */
 export default function CupStage() {
   const reduce = useReducedMotion();
   const [ready, setReady] = useState(false);
+  const stageRef = useRef(null);
+  const appRef = useRef(null);
+  const isVisibleRef = useRef(true);
+
+  useEffect(() => {
+    const node = stageRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) appRef.current?.play();
+        else appRef.current?.stop();
+      },
+      { rootMargin: '200px 0px' }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="cup-stage" role="img" aria-label="A cup of coffee">
+    <div className="cup-stage" role="img" aria-label="A cup of coffee" ref={stageRef}>
       <motion.div
         className="cup-stage__floater"
         animate={reduce ? {} : { y: [0, -14, 0] }}
@@ -60,6 +84,8 @@ export default function CupStage() {
                   // the site's real BEAN / LEAF typography, so it's hidden
                   // in favour of that (sharper, on-brand, layout-controlled).
                   app.findObjectByName('Text 2')?.hide();
+                  appRef.current = app;
+                  if (!isVisibleRef.current) app.stop();
                   setReady(true);
                   window.dispatchEvent(new Event('cup:ready'));
                 }}
