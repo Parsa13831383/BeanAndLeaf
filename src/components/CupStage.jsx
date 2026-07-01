@@ -92,6 +92,13 @@ export default function CupStage() {
               />
             </Suspense>
           </CupErrorBoundary>
+
+          {/* Spline's own "Built with Spline" badge is baked into the
+              canvas's rendered pixels (not a DOM node), at a fixed pixel
+              size/offset from the canvas's bottom-right corner. Lives
+              inside this same scaling/floating layer so it never drifts
+              out of alignment as the cup bobs. */}
+          <div className="cup-stage__veil" aria-hidden />
         </motion.div>
       </motion.div>
 
