@@ -553,21 +553,7 @@
   }
 }
 
-/* --- Visit: storefront photograph — a constrained editorial card, not a
-       full-bleed hero ------------------------------------------------ */
-.visit__photo-wrap {
-  max-width: 1200px;
-  margin-inline: auto;
+/* --- Visit: dessert gallery — a curated carousel, not a hero photo ----- */
+.visit__gallery {
   margin-bottom: clamp(3.5rem, 8vw, 6rem);
-  height: clamp(320px, 30vw, 420px);
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px -28px rgba(42, 33, 27, 0.28);
-}
-.visit__photo-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 32%;
-  display: block;
 }

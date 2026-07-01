@@ -140,6 +140,16 @@ export const kitchen = {
   ],
 };
 
+/* --- Gallery: a rotating look at what's in the case today ------------ */
+export const gallery = [
+  { src: '/p1.jpg', alt: 'A slice of chocolate loaf cake with chocolate buttercream' },
+  { src: '/p2.jpg', alt: 'A jam-filled shortbread biscuit' },
+  { src: '/p3.jpg', alt: 'A frangipane bar, dusted with icing sugar' },
+  { src: '/p4.jpg', alt: 'A cinnamon roll, dusted with icing sugar' },
+  { src: '/p5.jpg', alt: 'A pistachio and cranberry blondie' },
+  { src: '/p6.jpg', alt: 'Two loaded chocolate chip cookies' },
+];
+
 /* --- A small pause (editorial interlude, between Kitchen and Recognition) */
 export const pause = {
   eyebrow: 'A small ritual',

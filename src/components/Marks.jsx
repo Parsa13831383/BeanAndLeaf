@@ -20,6 +20,18 @@ export const Instagram = (props) => (
   </svg>
 );
 
+export const ChevronLeft = (props) => (
+  <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" aria-hidden {...props}>
+    <path d="M15 5 8 12l7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const ChevronRight = (props) => (
+  <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" aria-hidden {...props}>
+    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 /* A simple leaf glyph used as a quiet botanical accent. */
 export const LeafMark = (props) => (
   <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" aria-hidden {...props}>

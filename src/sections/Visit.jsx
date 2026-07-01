@@ -1,7 +1,8 @@
 import SectionHead from '../components/SectionHead';
 import Reveal from '../components/Reveal';
+import Carousel from '../components/Carousel';
 import { ArrowUpRight } from '../components/Marks';
-import { visit } from '../data/content';
+import { visit, gallery } from '../data/content';
 
 const mapsHref =
   'https://www.google.com/maps/search/?api=1&query=' +
@@ -11,13 +12,8 @@ export default function Visit() {
   return (
     <section id="visit" className="section panel--warm">
       <div className="container">
-        <Reveal className="visit__photo-wrap" y={0}>
-          <img
-            src="/4.jpg"
-            alt="Bean & Leaf Coffee House — 76 Hertford Street, Coventry"
-            loading="lazy"
-            decoding="async"
-          />
+        <Reveal className="visit__gallery" y={0}>
+          <Carousel images={gallery} />
         </Reveal>
 
         <div className="visit__grid">
