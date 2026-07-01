@@ -68,6 +68,11 @@ export const craft = {
 };
 
 /* --- From the bar ---------------------------------------------------- */
+// Each item's `image` is optional — drop a photo into /public/menu/ using
+// the exact filename below and it will appear automatically next to the
+// item. Nothing to touch in the components. Until a file exists at that
+// path, the thumbnail quietly renders as a soft blank swatch (no broken
+// image, no layout shift) — see Bar.jsx's MenuThumb.
 export const bar = {
   eyebrow: 'From the bar',
   heading: 'A short, serious menu',
@@ -77,31 +82,37 @@ export const bar = {
       name: 'Flat White',
       detail: 'Velvet milk, a double ristretto, the house favourite.',
       tag: 'Espresso',
+      image: '/menu/flat-white.jpg', // CHANGE: drop photo at public/menu/flat-white.jpg
     },
     {
       name: 'Filter / Batch Brew',
       detail: 'The guest roaster, brewed clean and served by the cup.',
       tag: 'Filter',
+      image: '/menu/filter-batch-brew.jpg', // CHANGE: drop photo at public/menu/filter-batch-brew.jpg
     },
     {
       name: 'V60 Pour-Over',
       detail: 'A single-origin, brewed to order — a rare thing in Coventry.',
       tag: 'Hand-brewed',
+      image: '/menu/v60-pour-over.jpg', // CHANGE: drop photo at public/menu/v60-pour-over.jpg
     },
     {
       name: 'Coffee Flight',
       detail: 'One coffee, three ways: espresso, macchiato and filter side by side.',
       tag: 'For the curious',
+      image: '/menu/coffee-flight.jpg', // CHANGE: drop photo at public/menu/coffee-flight.jpg
     },
     {
       name: 'Chai Latte',
       detail: 'Warm spice and steamed milk — a long-standing regular’s order.',
       tag: 'Comfort',
+      image: '/menu/chai-latte.jpg', // CHANGE: drop photo at public/menu/chai-latte.jpg
     },
     {
       name: 'Loose-Leaf Pot',
       detail: 'Chosen from the range, timed and poured at its peak.',
       tag: 'Tea',
+      image: '/menu/loose-leaf-pot.jpg', // CHANGE: drop photo at public/menu/loose-leaf-pot.jpg
     },
   ],
 };
