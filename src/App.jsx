@@ -6,6 +6,7 @@ import Preloader from './components/Preloader';
 // Above-the-fold is eager; everything below the hero is code-split and
 // streamed in, keeping first paint fast.
 import './sections/sections.css';
+const Inside = lazy(() => import('./sections/Inside'));
 const Story = lazy(() => import('./sections/Story'));
 const Craft = lazy(() => import('./sections/Craft'));
 const Bar = lazy(() => import('./sections/Bar'));
@@ -28,6 +29,7 @@ export default function App() {
       <main id="top">
         <Hero />
         <Suspense fallback={null}>
+          <Inside />
           <Story />
           <Craft />
           <Bar />

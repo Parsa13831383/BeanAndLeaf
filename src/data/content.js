@@ -27,6 +27,67 @@ export const nav = [
   { label: 'Visit', href: '#visit' },
 ];
 
+/* --- Inside Bean & Leaf: the room itself, not just the menu ---------- */
+// Each slide's `image` points at /public/cafe/. If a file is ever missing
+// or renamed, the slide falls back to a plain swatch instead of breaking —
+// see InsideImage in Inside.jsx.
+export const inside = {
+  eyebrow: 'Inside Bean & Leaf',
+  heading: 'A room worth\nslowing down for',
+  slides: [
+    {
+      image: '/cafe/place2.jpg',
+      title: 'Step Inside',
+      description:
+        'Beneath the old NatWest arch on Hertford Street — a doorway that’s welcomed regulars since 2017.',
+      tags: ['City centre', 'Est. 2017', 'Independent'],
+    },
+    {
+      image: '/cafe/place3.jpg',
+      title: 'A Room for Regulars',
+      description: 'Builders, students and old friends — the doorway table is never short of company.',
+      tags: ['Outdoor seating', 'Friendly faces', 'Free Wi-Fi'],
+    },
+    {
+      image: '/cafe/place1.jpg',
+      title: 'The Snug',
+      description:
+        'Down a few steps, a basement built for staying a while — armchairs, candlelight, and a shelf of books to borrow.',
+      tags: ['Basement lounge', 'Cosy seating', 'Free Wi-Fi'],
+    },
+    {
+      image: '/cafe/place4.jpg',
+      title: 'Quiet Corners',
+      description: 'A coffee, a book, and no one rushing you to finish either.',
+      tags: ['Study friendly', 'Power at tables', 'Free Wi-Fi'],
+    },
+    {
+      image: '/cafe/place5.jpg',
+      title: 'Room to Read',
+      description: 'Bigger than it looks from the street — more seating, more light, more reasons to linger.',
+      tags: ['More seating', 'Natural light', 'Free Wi-Fi'],
+    },
+    {
+      image: '/cafe/place6.jpg',
+      title: 'For Every Table',
+      description: 'From first-thing regulars to little ones on their best behaviour — everyone gets a seat.',
+      tags: ['Family friendly', 'Outdoor seating', 'City centre'],
+    },
+    {
+      image: '/cafe/place7.jpg',
+      title: 'Slow Mornings',
+      description: 'A heart poured in the cup, the paper folded on the table — the small rituals worth the visit.',
+      tags: ['Latte art', 'Order at the counter', 'Independent'],
+    },
+    {
+      image: '/cafe/place8.jpg',
+      title: 'The People Behind the Counter',
+      description: 'The same faces, the same care — a family-run team that knows how you take your coffee.',
+      tags: ['Family-run', 'Est. 2017', 'Independent'],
+    },
+  ],
+};
+
 /* --- Story ----------------------------------------------------------- */
 export const story = {
   eyebrow: 'Est. 2017 · Hertford Street',
