@@ -1,0 +1,60 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  background: var(--paper);
+}
+
+.preloader__steam {
+  color: var(--leaf);
+  opacity: 0.85;
+}
+.preloader__steam path {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: preloader-rise 2.2s ease-in-out infinite;
+}
+.preloader__steam path:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.preloader__steam path:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes preloader-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0.35;
+    transform: translateY(-3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.preloader__wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  color: var(--espresso);
+}
+.preloader__word {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  letter-spacing: -0.01em;
+}
+.preloader__wordmark .amp {
+  font-size: 1.15em;
+}

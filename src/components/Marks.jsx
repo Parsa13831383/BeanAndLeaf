@@ -47,3 +47,14 @@ export const LeafMark = (props) => (
 
 /* The brand ampersand, set in the display italic — used as a recurring mark. */
 export const Amp = ({ className = '' }) => <span className={`amp ${className}`}>&amp;</span>;
+
+/* Three rising steam curls — a minimal, café-specific loading motif. Each
+   path animates via plain CSS (see Preloader.css), so it automatically
+   respects the site-wide prefers-reduced-motion floor in global.css. */
+export const Steam = (props) => (
+  <svg viewBox="0 0 48 30" width="48" height="30" fill="none" aria-hidden {...props}>
+    <path d="M10 28c-3-4 3-6 0-10s3-6 0-10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    <path d="M24 28c-3-4 3-6 0-10s3-6 0-10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    <path d="M38 28c-3-4 3-6 0-10s3-6 0-10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+  </svg>
+);

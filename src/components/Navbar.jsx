@@ -20,10 +20,14 @@ export default function Navbar() {
   // Lock body scroll while the mobile menu is open. Lenis drives scroll
   // directly via window.scrollTo on every wheel/touch event, which can
   // bleed through a CSS-only overflow lock — stop/start it in step.
+  //
+  // No-op when closed (including on mount): the Preloader holds its own
+  // scroll lock during initial load, and unconditionally resetting
+  // overflow/lenis here on every render would clobber that.
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (open) lenis?.stop();
-    else lenis?.start();
+    if (!open) return;
+    document.body.style.overflow = 'hidden';
+    lenis?.stop();
     return () => {
       document.body.style.overflow = '';
       lenis?.start();

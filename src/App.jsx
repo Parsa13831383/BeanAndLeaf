@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Preloader from './components/Preloader';
 
 // Above-the-fold is eager; everything below the hero is code-split and
 // streamed in, keeping first paint fast.
@@ -19,6 +20,7 @@ const Footer = lazy(() => import('./sections/Footer'));
 export default function App() {
   return (
     <>
+      <Preloader />
       <a className="skip-link" href="#story">
         Skip to content
       </a>
