@@ -150,11 +150,13 @@
 
   /* The cup (and the Spline canvas's baked-in "Built with Spline" badge
      painted in its corner) must fit fully on-screen — width is capped to
-     the viewport instead of a fixed 520px, and the desktop's rightward
-     balancing offset is dropped so it stays truly centered. */
+     the viewport instead of a fixed 520px. The rendered cup graphic itself
+     sits ~5% left of its own canvas's centre (same asymmetry the desktop
+     rule corrects for with its +2.2rem offset) — translate's % is relative
+     to the element's own box, so this stays correct at any size here. */
   .hero__cup {
     width: min(58vw, 340px);
     height: min(58vw, 340px);
-    transform: translate(-50%, -50%);
+    transform: translate(calc(-50% + 5%), -50%);
   }
 }
